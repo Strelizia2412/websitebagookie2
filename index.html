@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cookies Ampas Tebu</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #388e3c;
+      color: white;
+      padding: 25px 0;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    }
+    nav {
+      background: #2e7d32;
+      padding: 12px 0;
+      text-align: center;
+      box-shadow: 0 3px 5px rgba(0,0,0,0.15);
+    }
+    nav a {
+      color: white;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 8px 12px;
+      border-radius: 6px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      display: inline-block;
+    }
+    nav a:hover {
+      background-color: #66bb6a;
+      transform: scale(1.1);
+    }
+    .container {
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+    }
+    section {
+      margin-bottom: 50px;
+    }
+    h2 {
+      color: #2e7d32;
+      border-bottom: 3px solid #66bb6a;
+      padding-bottom: 6px;
+      margin-bottom: 20px;
+    }
+    ul, ol {
+      padding-left: 20px;
+      font-size: 1.1rem;
+    }
+    /* Accordion styles */
+    .accordion {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+      cursor: pointer;
+      padding: 15px 20px;
+      width: 100%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .accordion:hover {
+      background-color: #c8e6c9;
+    }
+    .accordion.active {
+      background-color: #a5d6a7;
+    }
+    .panel {
+      padding: 0 20px 15px 20px;
+      background-color: white;
+      display: none;
+      border-left: 3px solid #66bb6a;
+      border-radius: 0 0 8px 8px;
+      font-size: 1rem;
+      color: #444;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    }
+    /* Button for proses */
+    .btn-video {
+      display: inline-block;
+      background-color: #388e3c;
+      color: white;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 8px rgba(56, 142, 60, 0.5);
+    }
+    .btn-video:hover {
+      background-color: #66bb6a;
+      box-shadow: 0 6px 12px rgba(102, 187, 106, 0.7);
+    }
+    /* Modal styles */
+    .modal {
+      display: none; 
+      position: fixed; 
+      z-index: 999; 
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      overflow: auto; 
+      background-color: rgba(0,0,0,0.6);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      position: relative;
+    }
+    .close-btn {
+      color: #888;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      position: absolute;
+      right: 20px;
+      top: 10px;
+    }
+    .close-btn:hover {
+      color: #000;
+    }
+    footer {
+      background: #388e3c;
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      box-shadow: 0 -3px 8px rgba(0,0,0,0.2);
+    }
+    /* Simple social media icons */
+    .social-icons {
+      margin-top: 10px;
+    }
+    .social-icons a {
+      color: white;
+      margin: 0 10px;
+      font-size: 1.4rem;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .social-icons a:hover {
+      color: #a5d6a7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pembuatan Cookies Ampas Tebu</h1>
+    <p>Inovasi pangan ramah lingkungan dan bernutrisi</p>
+  </header>
+
+  <nav>
+    <a href="#latar">Latar Belakang</a>
+    <a href="#bahan">Bahan</a>
+    <a href="#proses">Proses Produksi</a>
+    <a href="#manfaat">Manfaat</a>
+  </nav>
+
+  <div class="container">
+    <section id="latar">
+      <h2>Latar Belakang</h2>
+      <p>
+        Ampas tebu merupakan limbah agroindustri yang melimpah namun kurang dimanfaatkan. Dengan pengolahan yang tepat, ampas tebu dapat diubah menjadi bahan baku makanan yang bernilai, seperti cookies tinggi serat yang ramah lingkungan. Produk ini bertujuan mengurangi limbah, mendukung keberlanjutan, dan menyediakan alternatif kudapan sehat.
+      </p>
+    </section>
+
+    <section id="bahan">
+      <h2>Bahan Baku</h2>
+      <ul>
+        <li>Ampas tebu kering dan digiling halus</li>
+        <li>Tepung terigu</li>
+        <li>Gula kelapa</li>
+        <li>Margarin</li>
+        <li>Telur</li>
+        <li>Selai kacang hijau (untuk isian)</li>
+      </ul>
+    </section>
+
+    <section id="proses">
+      <h2>Proses Produksi</h2>
+      <ol>
+        <li>Pemilahan dan pengeringan ampas tebu</li>
+        <li>Penggilingan menjadi bubuk kasar (bagasse flour)</li>
+        <li>Pencampuran bahan kering: tepung, ampas tebu, gula</li>
+        <li>Penambahan bahan basah: margarin dan telur</li>
+        <li>Pembentukan adonan dan pengisian selai kacang hijau</li>
+        <li>Pemanggangan pada suhu 160°C selama 20-25 menit</li>
+        <li>Pendinginan dan pengemasan</li>
+      </ol>
+
+      <button class="btn-video" id="openModalBtn">Lihat Proses Produksi (Video)</button>
+    </section>
+
+    <section id="manfaat">
+      <h2>Manfaat Produk</h2>
+
+      <button class="accordion">Mengurangi limbah ampas tebu dari industri gula</button>
+      <div class="panel">
+        <p>Dengan memanfaatkan ampas tebu sebagai bahan baku cookies, limbah yang biasanya dibuang dapat berkurang secara signifikan.</p>
+      </div>
+
+      <button class="accordion">Meningkatkan nilai ekonomi bahan sisa</button>
+      <div class="panel">
+        <p>Pengolahan ampas tebu menjadi cookies menambah nilai jual dan memberikan peluang bisnis baru.</p>
+      </div>
+
+      <button class="accordion">Cookies tinggi serat dan lebih ramah lingkungan</button>
+      <div class="panel">
+        <p>Produk ini kaya serat sehingga baik untuk pencernaan dan menggunakan bahan yang ramah lingkungan.</p>
+      </div>
+
+      <button class="accordion">Memberikan alternatif kudapan sehat bagi masyarakat</button>
+      <div class="panel">
+        <p>Menawarkan pilihan makanan ringan yang lebih sehat dibandingkan cookies biasa.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Modal -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" id="closeModalBtn">&times;</span>
+      <!-- You can replace this with an actual video or more detailed image -->
+      <h3>Video Proses Produksi Cookies Ampas Tebu</h3>
+      <video width="100%" controls>
+        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+        Browser anda tidak mendukung video.
+      </video>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Inovasi Agroindustri Berkelanjutan</p>
+    <div class="social-icons">
+      <a href="#" title="Facebook" aria-label="Facebook">👍</a>
+      <a href="#" title="Instagram" aria-label="Instagram">📸</a>
+      <a href="#" title="Twitter" aria-label="Twitter">🐦</a>
+    </div>
+  </footer>
+
+  <script>
+    // Accordion functionality
+    const accordions = document.querySelectorAll('.accordion');
+    accordions.forEach(acc => {
+      acc.addEventListener('click', function() {
+        this.classList.toggle('active');
+        const panel = this.nextElementSibling;
+        if (panel.style.display === 'block') {
+          panel.style.display = 'none';
+        } else {
+          panel.style.display = 'block';
+        }
+      });
+    });
+
+    // Modal functionality
+    const modal = document.getElementById("myModal");
+    const openBtn = document.getElementById("openModalBtn");
+    const closeBtn = document.getElementById("closeModalBtn");
+
+    openBtn.onclick = function() {
+      modal.style.display = "flex";
+    }
+
+    closeBtn.onclick = function() {
+      modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>
